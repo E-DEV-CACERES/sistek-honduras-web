@@ -99,6 +99,7 @@
       <a href="#proceso" class="hover:text-brand-600 transition-colors">Cómo trabajamos</a>
       <a href="#portafolio" class="hover:text-brand-600 transition-colors">Portafolio</a>
       <a href="#precios" class="hover:text-brand-600 transition-colors">Precios</a>
+      <a href="#cotizador" class="hover:text-brand-600 transition-colors">Cotizador</a>
       <a href="#faq" class="hover:text-brand-600 transition-colors">Preguntas</a>
     </div>
 
@@ -121,6 +122,7 @@
       <a href="#proceso" class="mobile-link">Cómo trabajamos</a>
       <a href="#portafolio" class="mobile-link">Portafolio</a>
       <a href="#precios" class="mobile-link">Precios</a>
+      <a href="#cotizador" class="mobile-link">Cotizador</a>
       <a href="#faq" class="mobile-link">Preguntas</a>
       <a href="https://wa.me/50488971964?text=Hola%2C%20quiero%20cotizar%20una%20app%20o%20sistema" target="_blank" rel="noopener" class="bg-brand-600 text-white text-center font-semibold px-5 py-3 rounded-full">Cotizar por WhatsApp</a>
     </div>
@@ -540,6 +542,87 @@
         <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">AL</div>
         <div><p class="font-semibold text-sm">Ana López</p><p class="text-xs text-slate-400">Directora, Clínica dental</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== COTIZADOR ===== -->
+<section id="cotizador" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12" data-animate>
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Cotizador</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Estima el precio de tu proyecto</h2>
+      <p class="text-slate-500 mt-3 text-sm">Selecciona opciones y obt&#233;n un rango referencial en lempiras. Luego te enviamos una cotizaci&#243;n exacta por WhatsApp.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-start" data-animate>
+      <form id="quoteForm" class="lg:col-span-3 quote-card space-y-6">
+        <div>
+          <label class="quote-label" for="quoteService">Tipo de proyecto</label>
+          <select id="quoteService" name="service" class="quote-select" required>
+            <option value="paginas">P&#225;gina web / Landing</option>
+            <option value="apps">App m&#243;vil</option>
+            <option value="sistemas">Sistema web</option>
+            <option value="tiendas">Tienda en l&#237;nea</option>
+            <option value="financieras">Sistema para financieras</option>
+            <option value="ia">Automatizaci&#243;n con IA</option>
+            <option value="mantenimiento">Mantenimiento mensual</option>
+          </select>
+        </div>
+
+        <div>
+          <p class="quote-label mb-3">Complejidad</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="quote-option">
+              <input type="radio" name="complexity" value="simple" checked />
+              <span>Simple</span>
+            </label>
+            <label class="quote-option">
+              <input type="radio" name="complexity" value="media" />
+              <span>Media</span>
+            </label>
+            <label class="quote-option">
+              <input type="radio" name="complexity" value="avanzada" />
+              <span>Avanzada</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <p class="quote-label mb-3">Extras (opcional)</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="quote-check"><input type="checkbox" name="extras" value="admin" /> Panel de administraci&#243;n</label>
+            <label class="quote-check"><input type="checkbox" name="extras" value="multiplat" /> Android + iOS</label>
+            <label class="quote-check"><input type="checkbox" name="extras" value="pagos" /> Pagos en l&#237;nea</label>
+            <label class="quote-check"><input type="checkbox" name="extras" value="impresion" /> Impresi&#243;n en campo</label>
+            <label class="quote-check"><input type="checkbox" name="extras" value="bot" /> Bot de WhatsApp</label>
+            <label class="quote-check"><input type="checkbox" name="extras" value="usuarios" /> Multi-usuarios / roles</label>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="quote-label" for="quoteName">Tu nombre</label>
+            <input id="quoteName" name="nombre" type="text" class="quote-input" placeholder="Ej. Carlos" />
+          </div>
+          <div>
+            <label class="quote-label" for="quotePhone">WhatsApp</label>
+            <input id="quotePhone" name="telefono" type="tel" class="quote-input" placeholder="9999-9999" />
+          </div>
+        </div>
+      </form>
+
+      <aside class="lg:col-span-2 quote-result sticky top-28">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-200">Estimado referencial</p>
+        <p id="quoteRange" class="font-heading text-3xl md:text-4xl font-extrabold text-white mt-3">L. 6,000 &#8211; L. 8,500</p>
+        <p id="quoteNote" class="text-brand-100/80 text-sm mt-3">Proyecto simple de p&#225;gina web / landing.</p>
+        <ul id="quoteSummary" class="mt-5 space-y-2 text-sm text-brand-50/90"></ul>
+        <p class="text-xs text-brand-200/70 mt-5">* Este es un estimado. El precio final depende del alcance real.</p>
+        <button type="button" id="quoteWhatsApp" class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-white text-brand-700 font-semibold px-6 py-3.5 rounded-full hover:bg-brand-50 transition-all">
+          Enviar cotizaci&#243;n por WhatsApp
+        </button>
+      </aside>
     </div>
   </div>
 </section>
