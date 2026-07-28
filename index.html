@@ -176,6 +176,52 @@
   </div>
 </section>
 
+
+<!-- ===== ANALIZADOR WEB ===== -->
+<section id="analizador" class="analyzer-section py-16 md:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-800 to-brand-600"></div>
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_35%)]"></div>
+  <div class="relative max-w-4xl mx-auto px-5 md:px-8 text-center text-white">
+    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-brand-100 text-xs font-semibold px-4 py-1.5 rounded-full mb-5">Gratis &#183; 30 segundos</span>
+    <h2 class="font-heading text-3xl md:text-5xl font-extrabold leading-tight">
+      &#191;Tu web est&#225; perdiendo clientes<br class="hidden sm:block" />
+      <span class="text-brand-200">sin que te des cuenta?</span>
+    </h2>
+    <p class="mt-4 text-brand-100/85 text-base md:text-lg max-w-2xl mx-auto">
+      Pega tu link y descubre al instante si tu sitio falla en m&#243;vil, seguridad HTTPS, SEO b&#225;sico y claridad para Google.
+    </p>
+
+    <form id="analyzerForm" class="mt-8 analyzer-box text-left">
+      <label for="analyzerUrl" class="sr-only">URL de tu sitio web</label>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="analyzerUrl" type="url" required placeholder="https://tu-negocio.com" class="analyzer-input" />
+        <button type="submit" id="analyzerBtn" class="analyzer-btn">
+          Analizar mi web
+        </button>
+      </div>
+      <p id="analyzerError" class="hidden text-sm text-red-200 mt-3"></p>
+    </form>
+
+    <div id="analyzerLoading" class="hidden mt-8 text-brand-100 text-sm">
+      Escaneando tu sitio&#8230; un momento.
+    </div>
+
+    <div id="analyzerResults" class="hidden mt-8 text-left">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
+        <div>
+          <p class="text-brand-200 text-xs font-semibold uppercase tracking-widest">Resultado</p>
+          <p id="analyzerScoreLabel" class="font-heading text-2xl font-bold text-white mt-1">Puntaje: --/100</p>
+        </div>
+        <a id="analyzerWhatsApp" href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-white text-brand-700 font-semibold px-5 py-3 rounded-full hover:bg-brand-50 transition-all text-sm">
+          Quiero mejorar mi web
+        </a>
+      </div>
+      <div id="analyzerChecks" class="grid sm:grid-cols-2 gap-3"></div>
+      <p class="text-xs text-brand-200/70 mt-4">An&#225;lisis r&#225;pido y referencial. Para una auditor&#237;a completa, escr&#237;benos por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== LOGOS / CONFIANZA ===== -->
 <section class="py-10 border-y border-slate-100 bg-slate-50/60">
   <div class="max-w-7xl mx-auto px-5 md:px-8 text-center">
