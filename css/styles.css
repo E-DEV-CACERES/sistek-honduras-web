@@ -103,6 +103,10 @@ body {
   padding: 1.5rem;
   height: 100%;
 }
+.example-card.example-card--media {
+  padding: 0;
+  overflow: hidden;
+}
 .example-card h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
