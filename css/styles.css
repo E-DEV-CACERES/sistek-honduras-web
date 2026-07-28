@@ -84,6 +84,31 @@ body {
   background: #1a5cf5;
   color: #fff;
 }
+.service-card--featured {
+  border-color: #8ec5ff;
+  background: linear-gradient(180deg, #f5f9ff 0%, #ffffff 55%);
+  position: relative;
+}
+.service-card--featured .service-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #1a5cf5;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+  border-radius: 9999px;
+}
+.feature-glow {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.feature-glow:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.16);
+}
 
 /* ===== Service detail page ===== */
 .tech-chip {
