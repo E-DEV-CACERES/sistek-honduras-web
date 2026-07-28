@@ -1,0 +1,519 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<title>Sistek Honduras | Desarrollo de Apps y Sistemas a la Medida</title>
+<meta name="description" content="En Sistek Honduras desarrollamos aplicaciones móviles, sistemas web y páginas para negocios en Honduras. Cotiza gratis por WhatsApp." />
+<meta name="keywords" content="desarrollo de apps Honduras, sistemas web Honduras, aplicaciones a la medida, Tegucigalpa, San Pedro Sula" />
+<meta name="author" content="Sistek Honduras" />
+<link rel="canonical" href="https://www.sistekhn.com/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Sistek Honduras | Desarrollo de Apps y Sistemas a la Medida" />
+<meta property="og:description" content="Aplicaciones y sistemas a la medida para tu negocio en Honduras. Cotiza gratis por WhatsApp." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.sistekhn.com/" />
+<meta property="og:image" content="https://www.sistekhn.com/img/hero-app-mockup.jpg" />
+<meta property="og:locale" content="es_HN" />
+<meta property="og:site_name" content="Sistek Honduras" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sistek Honduras | Desarrollo de Apps y Sistemas a la Medida" />
+<meta name="twitter:description" content="Aplicaciones y sistemas a la medida para tu negocio en Honduras. Cotiza gratis por WhatsApp." />
+<meta name="twitter:image" content="https://www.sistekhn.com/img/hero-app-mockup.jpg" />
+
+<!-- Datos estructurados (Schema.org) para mostrar rich results en Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Sistek Honduras",
+  "description": "Desarrollo de aplicaciones móviles, sistemas web y páginas para negocios en Honduras.",
+  "url": "https://www.sistekhn.com/",
+  "image": "https://www.sistekhn.com/img/hero-app-mockup.jpg",
+  "telephone": "+504-8897-1964",
+  "priceRange": "L. 6,000 - L. 30,000",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Honduras"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "HN"
+  }
+}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#eef6ff',
+            100: '#d9ebff',
+            200: '#bcdcff',
+            300: '#8ec5ff',
+            400: '#59a4ff',
+            500: '#2f7dff',
+            600: '#1a5cf5',
+            700: '#1547e0',
+            800: '#183ab4',
+            900: '#1a358d',
+            950: '#141f52'
+          }
+        },
+        fontFamily: {
+          heading: ['Poppins', 'sans-serif'],
+          body: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-body text-slate-800 bg-white antialiased">
+
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
+    <a href="#inicio" class="flex items-center gap-2 font-heading font-bold text-xl text-brand-950">
+      <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 flex items-center justify-center text-white text-lg">S</span>
+      Sistek <span class="text-brand-600">Honduras</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios</a>
+      <a href="#proceso" class="hover:text-brand-600 transition-colors">Cómo trabajamos</a>
+      <a href="#equipo" class="hover:text-brand-600 transition-colors">Equipo</a>
+      <a href="#portafolio" class="hover:text-brand-600 transition-colors">Portafolio</a>
+      <a href="#precios" class="hover:text-brand-600 transition-colors">Precios</a>
+      <a href="#faq" class="hover:text-brand-600 transition-colors">Preguntas</a>
+    </div>
+
+    <a href="https://wa.me/50488971964?text=Hola%2C%20quiero%20cotizar%20una%20app%20o%20sistema"
+       target="_blank" rel="noopener"
+       class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-lg shadow-brand-600/20 transition-all hover:-translate-y-0.5">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.868-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.421 0 .05 5.365.05 11.969c0 2.11.552 4.166 1.601 5.981L0 24l6.223-1.63a11.95 11.95 0 0 0 5.805 1.48h.005c6.61 0 11.982-5.365 11.982-11.968 0-3.198-1.246-6.204-3.508-8.464A11.9 11.9 0 0 0 12.03 0zm0 21.79h-.004a9.83 9.83 0 0 1-5.01-1.371l-.359-.213-3.692.968.987-3.599-.235-.369a9.79 9.79 0 0 1-1.5-5.237c0-5.42 4.412-9.831 9.836-9.831 2.627 0 5.096 1.024 6.953 2.883a9.766 9.766 0 0 1 2.877 6.955c0 5.42-4.412 9.814-9.853 9.814z"/></svg>
+      Cotizar ahora
+    </a>
+
+    <button id="menuBtn" class="md:hidden text-brand-950" aria-label="Abrir menú">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-slate-100 shadow-lg">
+    <div class="flex flex-col px-5 py-4 gap-4 text-sm font-medium">
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#proceso" class="mobile-link">Cómo trabajamos</a>
+      <a href="#equipo" class="mobile-link">Equipo</a>
+      <a href="#portafolio" class="mobile-link">Portafolio</a>
+      <a href="#precios" class="mobile-link">Precios</a>
+      <a href="#faq" class="mobile-link">Preguntas</a>
+      <a href="https://wa.me/50488971964?text=Hola%2C%20quiero%20cotizar%20una%20app%20o%20sistema" target="_blank" rel="noopener" class="bg-brand-600 text-white text-center font-semibold px-5 py-3 rounded-full">Cotizar por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="inicio" class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-200/50 rounded-full blur-3xl"></div>
+  <div class="absolute top-40 -left-32 w-96 h-96 bg-brand-100 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+    <div data-animate>
+      <span class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+        🇭🇳 Desarrollo de software hecho en Honduras
+      </span>
+      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-brand-950">
+        Aplicaciones y sistemas <span class="text-brand-600">a la medida</span> de tu negocio
+      </h1>
+      <p class="mt-6 text-lg text-slate-600 max-w-xl">
+        Convertimos tu idea en una app o sistema real: apps móviles, sistemas de facturación, inventario, páginas web y mucho más. Cotización gratis en menos de 24 horas.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="https://wa.me/50488971964?text=Hola%2C%20quiero%20cotizar%20una%20app%20o%20sistema" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-4 rounded-full shadow-xl shadow-brand-600/25 transition-all hover:-translate-y-0.5">
+          Solicita tu cotización gratis
+        </a>
+        <a href="#servicios" class="inline-flex items-center justify-center gap-2 border-2 border-brand-200 hover:border-brand-400 text-brand-700 font-semibold px-7 py-4 rounded-full transition-all">
+          Ver servicios
+        </a>
+      </div>
+      <div class="mt-10 flex items-center gap-6 text-sm text-slate-500">
+        <div><span class="block text-2xl font-bold text-brand-950 font-heading">+5</span> Proyectos entregados</div>
+        <div class="w-px h-8 bg-slate-200"></div>
+        <div><span class="block text-2xl font-bold text-brand-950 font-heading">24h</span> Tiempo de respuesta</div>
+        <div class="w-px h-8 bg-slate-200"></div>
+        <div><span class="block text-2xl font-bold text-brand-950 font-heading">100%</span> Soporte local</div>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center" data-animate>
+      <picture>
+        <source srcset="img/hero-app-mockup.webp" type="image/webp" />
+        <img src="img/hero-app-mockup.jpg" width="800" height="533" alt="Mockup de app de ventas desarrollada por Sistek Honduras" class="relative w-72 md:w-96 rounded-[2rem] shadow-2xl" fetchpriority="high" />
+      </picture>
+      <div class="absolute -bottom-6 -left-4 md:left-0 bg-white shadow-xl rounded-2xl p-4 flex items-center gap-3 -rotate-3 animate-float">
+        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-lg">✓</div>
+        <div><p class="text-xs text-slate-500">Proyecto entregado</p><p class="text-sm font-bold text-brand-950">A tiempo</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGOS / CONFIANZA ===== -->
+<section class="py-10 border-y border-slate-100 bg-slate-50/60">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 text-center">
+    <p class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-6">Ideal para negocios como el tuyo</p>
+    <div class="flex flex-wrap justify-center gap-x-10 gap-y-4 text-slate-400 font-heading font-semibold text-sm md:text-base">
+      <span> Restaurantes</span>
+      <span> Tiendas y retail</span>
+      <span> Clínicas</span>
+      <span> Constructoras</span>
+      <span> Logística</span>
+      <span> Academias</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section id="servicios" class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+    <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Servicios</span>
+    <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Todo lo que tu negocio necesita para digitalizarse</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Apps móviles</h3>
+      <p class="text-slate-500 text-sm mt-2">Aplicaciones para Android e iOS a la medida de tu negocio o idea de emprendimiento.</p>
+    </div>
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Sistemas web</h3>
+      <p class="text-slate-500 text-sm mt-2">Sistemas de facturación, inventario, POS y administración a la medida, accesibles desde cualquier lugar.</p>
+    </div>
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Páginas web</h3>
+      <p class="text-slate-500 text-sm mt-2">Sitios web y landing pages profesionales que convierten visitantes en clientes.</p>
+    </div>
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Tiendas en línea</h3>
+      <p class="text-slate-500 text-sm mt-2">E-commerce con pagos, catálogo y gestión de pedidos para vender por internet.</p>
+    </div>
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Automatización con IA</h3>
+      <p class="text-slate-500 text-sm mt-2">Chatbots, respuestas automáticas de WhatsApp y automatización de procesos repetitivos.</p>
+    </div>
+    <div class="service-card" data-animate>
+      <div class="service-icon"></div>
+      <h3 class="font-heading font-bold text-lg mt-4">Mantenimiento y soporte</h3>
+      <p class="text-slate-500 text-sm mt-2">Actualizaciones, mejoras y soporte continuo para que tu sistema nunca se detenga.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESO ===== -->
+<section id="proceso" class="py-24 bg-brand-950 text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_20%,white,transparent_35%)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+      <span class="text-brand-300 font-semibold text-sm uppercase tracking-widest">Cómo trabajamos</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3">De tu idea a una app funcionando, en 4 pasos</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="step-card" data-animate>
+        <div class="step-number">1</div>
+        <h3 class="font-heading font-bold text-lg mt-4">Cuéntanos tu idea</h3>
+        <p class="text-brand-100/70 text-sm mt-2">Nos escribes por WhatsApp y platicamos sobre lo que necesita tu negocio.</p>
+      </div>
+      <div class="step-card" data-animate>
+        <div class="step-number">2</div>
+        <h3 class="font-heading font-bold text-lg mt-4">Propuesta y cotización</h3>
+        <p class="text-brand-100/70 text-sm mt-2">Te enviamos una propuesta clara con alcance, tiempo y precio, sin sorpresas.</p>
+      </div>
+      <div class="step-card" data-animate>
+        <div class="step-number">3</div>
+        <h3 class="font-heading font-bold text-lg mt-4">Desarrollo</h3>
+        <p class="text-brand-100/70 text-sm mt-2">Construimos tu proyecto con avances constantes para que veas el progreso.</p>
+      </div>
+      <div class="step-card" data-animate>
+        <div class="step-number">4</div>
+        <h3 class="font-heading font-bold text-lg mt-4">Entrega y soporte</h3>
+        <p class="text-brand-100/70 text-sm mt-2">Publicamos tu app/sistema y te damos soporte para que siga creciendo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EQUIPO ===== -->
+<section id="equipo" class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+    <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Nuestro equipo</span>
+    <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Las personas detrás de tus proyectos</h2>
+    <p class="text-slate-500 mt-3 text-sm">* Reemplaza el nombre, foto y bio con tu información real.</p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <div class="team-card" data-animate>
+      <div class="team-avatar">TU</div>
+      <h3 class="font-heading font-bold text-lg mt-5">Tu Nombre</h3>
+      <p class="text-brand-600 text-sm font-semibold mt-1">Fundador &amp; Desarrollador Full-Stack</p>
+      <p class="text-slate-500 text-sm mt-3">Diseño y desarrollo tu app o sistema de principio a fin: desde la idea hasta la publicación y el soporte.</p>
+      <div class="flex gap-3 mt-5">
+        <a href="#" class="team-social" aria-label="LinkedIn">in</a>
+        <a href="#" class="team-social" aria-label="GitHub">gh</a>
+        <a href="https://wa.me/50400000000" target="_blank" rel="noopener" class="team-social" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+
+    <div class="team-card team-card--ghost" data-animate>
+      <div class="team-avatar team-avatar--ghost">+</div>
+      <h3 class="font-heading font-bold text-lg mt-5 text-slate-400">Próximo integrante</h3>
+      <p class="text-slate-400 text-sm font-semibold mt-1">Vacante abierta</p>
+      <p class="text-slate-400 text-sm mt-3">Estamos creciendo. Si quieres formar parte del equipo de Sistek Honduras, escríbenos.</p>
+    </div>
+
+    <div class="team-card team-card--ghost" data-animate>
+      <div class="team-avatar team-avatar--ghost">+</div>
+      <h3 class="font-heading font-bold text-lg mt-5 text-slate-400">Próximo integrante</h3>
+      <p class="text-slate-400 text-sm font-semibold mt-1">Vacante abierta</p>
+      <p class="text-slate-400 text-sm mt-3">Diseñadores, desarrolladores y vendedores son bienvenidos a unirse al equipo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTAFOLIO ===== -->
+<section id="portafolio" class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+    <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Portafolio</span>
+    <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Proyectos que hemos desarrollado</h2>
+    <p class="text-slate-500 mt-3 text-sm">* Reemplaza estas tarjetas con capturas reales de tus proyectos a medida que los completes.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="portfolio-card" data-animate>
+      <div class="portfolio-thumb">
+        <picture>
+          <source srcset="img/portfolio-restaurante.webp" type="image/webp" />
+          <img src="img/portfolio-restaurante.jpg" width="800" height="533" alt="App para restaurante - menú digital y pedidos" loading="lazy" />
+        </picture>
+      </div>
+      <div class="p-5">
+        <h3 class="font-heading font-bold">App para restaurante</h3>
+        <p class="text-slate-500 text-sm mt-1">Pedidos, menú digital y gestión de mesas en tiempo real.</p>
+      </div>
+    </div>
+    <div class="portfolio-card" data-animate>
+      <div class="portfolio-thumb">
+        <picture>
+          <source srcset="img/portfolio-inventario.webp" type="image/webp" />
+          <img src="img/portfolio-inventario.jpg" width="800" height="533" alt="Sistema de inventario - dashboard de stock y ventas" loading="lazy" />
+        </picture>
+      </div>
+      <div class="p-5">
+        <h3 class="font-heading font-bold">Sistema de inventario</h3>
+        <p class="text-slate-500 text-sm mt-1">Control de stock, ventas y reportes para una pyme local.</p>
+      </div>
+    </div>
+    <div class="portfolio-card" data-animate>
+      <div class="portfolio-thumb">
+        <picture>
+          <source srcset="img/portfolio-clinica.webp" type="image/webp" />
+          <img src="img/portfolio-clinica.jpg" width="800" height="533" alt="Agenda para clínica - reserva de citas en línea" loading="lazy" />
+        </picture>
+      </div>
+      <div class="p-5">
+        <h3 class="font-heading font-bold">Agenda para clínica</h3>
+        <p class="text-slate-500 text-sm mt-1">Citas en línea y recordatorios automáticos por WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRECIOS ===== -->
+<section id="precios" class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Precios</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Paquetes flexibles para cada etapa de tu negocio</h2>
+      <p class="text-slate-500 mt-3 text-sm">* Precios referenciales — ajústalos según tus costos reales.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
+      <div class="price-card" data-animate>
+        <h3 class="font-heading font-bold text-xl">Básico</h3>
+        <p class="text-slate-500 text-sm mt-2">Ideal para emprendedores que están empezando.</p>
+        <p class="mt-6"><span class="text-3xl font-heading font-extrabold text-brand-950">Desde L. 6,000</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li>✔ Landing page o app simple</li>
+          <li>✔ Diseño responsive</li>
+          <li>✔ 1 ronda de ajustes</li>
+          <li>✔ Entrega en 1-2 semanas</li>
+        </ul>
+        <a href="https://wa.me/50488971964?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico" target="_blank" rel="noopener" class="price-btn">Elegir plan</a>
+      </div>
+      <div class="price-card price-card--highlight" data-animate>
+        <span class="badge">Más popular</span>
+        <h3 class="font-heading font-bold text-xl">Profesional</h3>
+        <p class="text-brand-100 text-sm mt-2">Para negocios que buscan un sistema completo.</p>
+        <p class="mt-6"><span class="text-3xl font-heading font-extrabold text-white">Desde L. 15,000</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-brand-50">
+          <li>✔ App o sistema web completo</li>
+          <li>✔ Panel de administración</li>
+          <li>✔ Integración de pagos/WhatsApp</li>
+          <li>✔ 1 mes de soporte incluido</li>
+        </ul>
+        <a href="https://wa.me/50488971964?text=Hola%2C%20me%20interesa%20el%20paquete%20Profesional" target="_blank" rel="noopener" class="price-btn price-btn--light">Elegir plan</a>
+      </div>
+      <div class="price-card" data-animate>
+        <h3 class="font-heading font-bold text-xl">Empresarial</h3>
+        <p class="text-slate-500 text-sm mt-2">Sistemas a la medida para operaciones más grandes.</p>
+        <p class="mt-6"><span class="text-3xl font-heading font-extrabold text-brand-950">Cotización</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li>✔ Arquitectura a la medida</li>
+          <li>✔ Múltiples integraciones</li>
+          <li>✔ Soporte y mantenimiento mensual</li>
+          <li>✔ Acompañamiento continuo</li>
+        </ul>
+        <a href="https://wa.me/50488971964?text=Hola%2C%20me%20interesa%20el%20paquete%20Empresarial" target="_blank" rel="noopener" class="price-btn">Elegir plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+    <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Testimonios</span>
+    <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Lo que dicen nuestros clientes</h2>
+    <p class="text-slate-500 mt-3 text-sm">* Reemplaza con testimonios reales apenas tengas tus primeros clientes.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="testimonial-card" data-animate>
+      <p class="text-slate-600 text-sm">"Nos entregaron el sistema de inventario a tiempo y el soporte ha sido excelente. Ahora controlamos todo desde el celular."</p>
+      <div class="flex items-center gap-3 mt-5">
+        <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">JM</div>
+        <div><p class="font-semibold text-sm">José Martínez</p><p class="text-xs text-slate-400">Dueño, Ferretería local</p></div>
+      </div>
+    </div>
+    <div class="testimonial-card" data-animate>
+      <p class="text-slate-600 text-sm">"La app de pedidos aumentó nuestras ventas en línea desde el primer mes. Muy recomendados."</p>
+      <div class="flex items-center gap-3 mt-5">
+        <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">CR</div>
+        <div><p class="font-semibold text-sm">Carla Rivera</p><p class="text-xs text-slate-400">Gerente, Restaurante</p></div>
+      </div>
+    </div>
+    <div class="testimonial-card" data-animate>
+      <p class="text-slate-600 text-sm">"Explicaron todo el proceso claramente y cumplieron los tiempos. El sistema es justo lo que necesitábamos."</p>
+      <div class="flex items-center gap-3 mt-5">
+        <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">AL</div>
+        <div><p class="font-semibold text-sm">Ana López</p><p class="text-xs text-slate-400">Directora, Clínica dental</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-24 bg-slate-50">
+  <div class="max-w-3xl mx-auto px-5 md:px-8">
+    <div class="text-center mb-14" data-animate>
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Preguntas frecuentes</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 text-brand-950">Resolvemos tus dudas</h2>
+    </div>
+    <div class="space-y-4" id="faqList">
+      <div class="faq-item" data-animate>
+        <button class="faq-question">¿Cuánto cuesta desarrollar una app o sistema? <span>+</span></button>
+        <div class="faq-answer">El costo depende de la complejidad del proyecto. Manejamos paquetes desde L. 6,000 para proyectos simples hasta cotizaciones a la medida para sistemas más grandes. Escríbenos y te damos un precio exacto sin compromiso.</div>
+      </div>
+      <div class="faq-item" data-animate>
+        <button class="faq-question">¿Cuánto tiempo tarda un proyecto? <span>+</span></button>
+        <div class="faq-answer">Un proyecto simple puede estar listo en 1-2 semanas. Sistemas más completos toman entre 3 y 8 semanas dependiendo del alcance.</div>
+      </div>
+      <div class="faq-item" data-animate>
+        <button class="faq-question">¿Dan soporte después de la entrega? <span>+</span></button>
+        <div class="faq-answer">Sí, todos nuestros paquetes incluyen soporte inicial y ofrecemos planes de mantenimiento mensual para que tu sistema siempre funcione bien.</div>
+      </div>
+      <div class="faq-item" data-animate>
+        <button class="faq-question">¿Puedo pedir cambios durante el desarrollo? <span>+</span></button>
+        <div class="faq-answer">Claro, trabajamos con avances constantes para que puedas revisar el progreso y pedir ajustes antes de la entrega final.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL / CONTACTO ===== -->
+<section id="contacto" class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+  <div class="grid lg:grid-cols-2 gap-10 bg-brand-950 rounded-3xl overflow-hidden relative">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_80%_20%,white,transparent_40%)]"></div>
+    <div class="relative p-10 md:p-14 text-white flex flex-col justify-center" data-animate>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold">¿Listo para digitalizar tu negocio?</h2>
+      <p class="text-brand-100/80 mt-4">Cuéntanos tu idea y te respondemos con una propuesta en menos de 24 horas. Sin costo, sin compromiso.</p>
+      <div class="mt-8 space-y-3 text-sm text-brand-100/90">
+        <p>📍 Honduras</p>
+        <p>📱 WhatsApp: +504 88971964</p>
+        <p>✉️ contacto@sistekhn.com</p>
+      </div>
+      <div class="flex gap-4 mt-8">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">ig</a>
+        <a href="#" class="social-icon">tt</a>
+      </div>
+    </div>
+
+    <div class="relative bg-white p-8 md:p-12 m-3 md:m-4 rounded-2xl" data-animate>
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label class="text-sm font-medium text-slate-600">Nombre</label>
+          <input required name="nombre" type="text" placeholder="Tu nombre" class="form-input" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-slate-600">Teléfono / WhatsApp</label>
+          <input required name="telefono" type="tel" placeholder="9999-9999" class="form-input" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-slate-600">¿Qué necesitas?</label>
+          <textarea required name="mensaje" rows="3" placeholder="Cuéntanos brevemente tu idea..." class="form-input"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-xl transition-all">
+          Enviar por WhatsApp
+        </button>
+        <p class="text-xs text-slate-400 text-center">Al enviar serás redirigido a WhatsApp con tu mensaje ya escrito.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-8 border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+    <p>© <span id="year"></span> Sistek Honduras. Todos los derechos reservados.</p>
+    <p>Hecho con 💙 en Honduras</p>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOTANTE ===== -->
+<a href="https://wa.me/50488971964?text=Hola%2C%20quiero%20cotizar%20una%20app%20o%20sistema" target="_blank" rel="noopener" id="waFloat" aria-label="Escríbenos por WhatsApp">
+  <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.868-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.421 0 .05 5.365.05 11.969c0 2.11.552 4.166 1.601 5.981L0 24l6.223-1.63a11.95 11.95 0 0 0 5.805 1.48h.005c6.61 0 11.982-5.365 11.982-11.968 0-3.198-1.246-6.204-3.508-8.464A11.9 11.9 0 0 0 12.03 0zm0 21.79h-.004a9.83 9.83 0 0 1-5.01-1.371l-.359-.213-3.692.968.987-3.599-.235-.369a9.79 9.79 0 0 1-1.5-5.237c0-5.42 4.412-9.831 9.836-9.831 2.627 0 5.096 1.024 6.953 2.883a9.766 9.766 0 0 1 2.877 6.955c0 5.42-4.412 9.814-9.853 9.814z"/></svg>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
