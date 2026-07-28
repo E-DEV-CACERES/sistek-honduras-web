@@ -180,7 +180,11 @@ if (quoteForm) {
   });
 }
 
-// ===== Analizador web =====
+// ===== Analizador web (Google PageSpeed Insights API) =====
+// Obtén tu API key gratis en Google Cloud Console > APIs > PageSpeed Insights API
+// https://developers.google.com/speed/docs/insights/v5/get-started
+const GOOGLE_PSI_API_KEY = ""; // pega aquí tu API key
+
 const analyzerForm = document.getElementById("analyzerForm");
 if (analyzerForm) {
   const urlInput = document.getElementById("analyzerUrl");
@@ -189,6 +193,7 @@ if (analyzerForm) {
   const loadingEl = document.getElementById("analyzerLoading");
   const resultsEl = document.getElementById("analyzerResults");
   const checksEl = document.getElementById("analyzerChecks");
+  const scoresEl = document.getElementById("analyzerScores");
   const scoreEl = document.getElementById("analyzerScoreLabel");
   const waLink = document.getElementById("analyzerWhatsApp");
 
@@ -203,6 +208,33 @@ if (analyzerForm) {
     } catch {
       return null;
     }
+  }
+
+  function scoreOf(category) {
+    if (!category || typeof category.score !== "number") return null;
+    return Math.round(category.score * 100);
+  }
+
+  function auditOk(audit) {
+    if (!audit) return null;
+    // Lighthouse: score 0-1, null for informative, or scoreDisplayMode
+    if (typeof audit.score === "number") return audit.score >= 0.9;
+    return audit.scoreDisplayMode === "notApplicable" ? true : null;
+  }
+
+  function renderScores(scores) {
+    scoresEl.innerHTML = "";
+    scores.forEach((s) => {
+      const div = document.createElement("div");
+      div.className = "analyzer-check " + (s.value >= 90 ? "ok" : s.value >= 50 ? "ok" : "bad");
+      div.innerHTML = `
+        <div class="mark">${s.value ?? "--"}</div>
+        <div>
+          <div class="title">${s.label}</div>
+          <div class="desc">Google Lighthouse</div>
+        </div>`;
+      scoresEl.appendChild(div);
+    });
   }
 
   function renderChecks(checks) {
@@ -236,107 +268,136 @@ if (analyzerForm) {
     btn.textContent = "Analizando...";
     loadingEl.classList.remove("hidden");
 
-    const checks = [];
-    const isHttps = parsed.protocol === "https:";
-    checks.push({
-      ok: isHttps,
-      title: "Conexión segura (HTTPS)",
-      desc: isHttps
-        ? "Tu sitio usa HTTPS. Bien para confianza y SEO."
-        : "No detectamos HTTPS. Eso puede ahuyentar clientes.",
-    });
-
     try {
-      const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(parsed.href)}`;
+      const endpoint = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
+      endpoint.searchParams.set("url", parsed.href);
+      endpoint.searchParams.set("strategy", "mobile");
+      endpoint.searchParams.append("category", "performance");
+      endpoint.searchParams.append("category", "accessibility");
+      endpoint.searchParams.append("category", "best-practices");
+      endpoint.searchParams.append("category", "seo");
+      endpoint.searchParams.set("locale", "es");
+      if (GOOGLE_PSI_API_KEY) endpoint.searchParams.set("key", GOOGLE_PSI_API_KEY);
+
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 12000);
-      const res = await fetch(proxy, { signal: controller.signal });
+      const timeout = setTimeout(() => controller.abort(), 60000);
+      const res = await fetch(endpoint.toString(), { signal: controller.signal });
       clearTimeout(timeout);
 
-      if (!res.ok) throw new Error("No se pudo leer el sitio");
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
+      const data = await res.json();
+      if (!res.ok) {
+        const msg =
+          data?.error?.message ||
+          "Google no pudo analizar el sitio. Revisa la URL o configura tu API key.";
+        throw new Error(msg);
+      }
 
-      const title = (doc.querySelector("title")?.textContent || "").trim();
-      const description = (
-        doc.querySelector('meta[name="description"]')?.getAttribute("content") || ""
-      ).trim();
-      const viewport = doc.querySelector('meta[name="viewport"]');
-      const h1 = doc.querySelectorAll("h1").length;
-      const ogImage = doc.querySelector('meta[property="og:image"]');
+      const lh = data.lighthouseResult;
+      if (!lh) throw new Error("Respuesta incompleta de Google PageSpeed.");
 
-      checks.push({
-        ok: title.length >= 10,
-        title: "Título de la página",
-        desc: title
-          ? `Encontramos: “${title.slice(0, 70)}${title.length > 70 ? "…" : ""}”`
-          : "No encontramos un título claro. Google lo necesita.",
-      });
+      const cats = lh.categories || {};
+      const perf = scoreOf(cats.performance);
+      const seo = scoreOf(cats.seo);
+      const a11y = scoreOf(cats.accessibility);
+      const best = scoreOf(cats["best-practices"]);
 
-      checks.push({
-        ok: description.length >= 40,
-        title: "Meta descripción",
-        desc: description
-          ? "Hay descripción para buscadores y redes."
-          : "Falta una meta descripción atractiva.",
-      });
+      const scores = [
+        { label: "Rendimiento", value: perf },
+        { label: "SEO", value: seo },
+        { label: "Accesibilidad", value: a11y },
+        { label: "Buenas prácticas", value: best },
+      ].filter((s) => s.value !== null);
 
-      checks.push({
-        ok: Boolean(viewport),
-        title: "Diseño móvil",
-        desc: viewport
-          ? "Tiene configuración responsive (viewport)."
-          : "No detectamos viewport. Puede verse mal en celular.",
-      });
+      const avg = Math.round(scores.reduce((sum, s) => sum + s.value, 0) / scores.length);
+      scoreEl.textContent = `Puntaje promedio: ${avg}/100`;
+      renderScores(scores);
 
-      checks.push({
-        ok: h1 === 1,
-        title: "Encabezado principal (H1)",
-        desc:
-          h1 === 1
-            ? "Hay un H1 correcto."
-            : h1 === 0
-              ? "No encontramos H1. Importante para SEO."
-              : `Hay ${h1} H1. Lo ideal es uno solo.`,
-      });
+      const audits = lh.audits || {};
+      const checks = [];
 
-      checks.push({
-        ok: Boolean(ogImage),
-        title: "Imagen al compartir",
-        desc: ogImage
-          ? "Tiene imagen Open Graph para redes sociales."
-          : "Al compartir el link puede verse sin imagen.",
-      });
-    } catch {
-      checks.push({
-        ok: false,
-        title: "No pudimos leer todo el sitio",
-        desc: "Puede tener bloqueos, estar caído o tardar mucho. Igual te ayudamos a revisarlo.",
-      });
-      checks.push({
-        ok: isHttps,
-        title: "Revisión inicial de seguridad",
-        desc: isHttps ? "Al menos usa HTTPS." : "Conviene migrar a HTTPS cuanto antes.",
-      });
+      const httpsOk = auditOk(audits["is-on-https"]);
+      if (httpsOk !== null) {
+        checks.push({
+          ok: httpsOk,
+          title: "HTTPS seguro",
+          desc: httpsOk ? "Google confirma que usa HTTPS." : "Google detecta problemas de HTTPS.",
+        });
+      }
+
+      const viewportOk = auditOk(audits.viewport);
+      if (viewportOk !== null) {
+        checks.push({
+          ok: viewportOk,
+          title: "Optimizado para móvil",
+          desc: viewportOk
+            ? "Tiene viewport correcto para celulares."
+            : "Falta o falla la configuración móvil (viewport).",
+        });
+      }
+
+      const titleOk = auditOk(audits["document-title"]);
+      if (titleOk !== null) {
+        checks.push({
+          ok: titleOk,
+          title: "Título de la página",
+          desc: titleOk
+            ? "El título está bien definido."
+            : "El título falta o no es óptimo para Google.",
+        });
+      }
+
+      const metaOk = auditOk(audits["meta-description"]);
+      if (metaOk !== null) {
+        checks.push({
+          ok: metaOk,
+          title: "Meta descripción",
+          desc: metaOk
+            ? "Tiene meta descripción."
+            : "Falta meta descripción para buscadores.",
+        });
+      }
+
+      const lcp = audits["largest-contentful-paint"];
+      if (lcp?.displayValue) {
+        const lcpOk = typeof lcp.score === "number" ? lcp.score >= 0.5 : false;
+        checks.push({
+          ok: lcpOk,
+          title: "Velocidad de carga (LCP)",
+          desc: `Largest Contentful Paint: ${lcp.displayValue}`,
+        });
+      }
+
+      const cls = audits["cumulative-layout-shift"];
+      if (cls?.displayValue) {
+        const clsOk = typeof cls.score === "number" ? cls.score >= 0.9 : false;
+        checks.push({
+          ok: clsOk,
+          title: "Estabilidad visual (CLS)",
+          desc: `Cumulative Layout Shift: ${cls.displayValue}`,
+        });
+      }
+
+      renderChecks(checks);
+
+      const mensaje =
+        `Hola, analicé mi web con Google PageSpeed en Sistek Honduras.\n` +
+        `URL: ${parsed.href}\n` +
+        `Promedio: ${avg}/100\n` +
+        `Rendimiento: ${perf ?? "-"} | SEO: ${seo ?? "-"} | Accesibilidad: ${a11y ?? "-"} | Buenas prácticas: ${best ?? "-"}\n` +
+        `Quiero mejorar mi sitio.`;
+
+      waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+      resultsEl.classList.remove("hidden");
+    } catch (err) {
+      errorEl.textContent =
+        err.name === "AbortError"
+          ? "Google tardó demasiado. Intenta de nuevo en unos segundos."
+          : err.message || "No se pudo analizar con Google PageSpeed.";
+      errorEl.classList.remove("hidden");
+    } finally {
+      loadingEl.classList.add("hidden");
+      btn.disabled = false;
+      btn.textContent = "Analizar mi web";
     }
-
-    const score = Math.round((checks.filter((c) => c.ok).length / checks.length) * 100);
-    scoreEl.textContent = `Puntaje: ${score}/100`;
-    renderChecks(checks);
-
-    const fails = checks.filter((c) => !c.ok).map((c) => c.title);
-    const mensaje =
-      `Hola, analicé mi web en Sistek Honduras.\n` +
-      `URL: ${parsed.href}\n` +
-      `Puntaje: ${score}/100\n` +
-      `Pendientes: ${fails.length ? fails.join(", ") : "Ninguno crítico"}\n` +
-      `Quiero mejorar mi sitio.`;
-
-    waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
-
-    loadingEl.classList.add("hidden");
-    resultsEl.classList.remove("hidden");
-    btn.disabled = false;
-    btn.textContent = "Analizar mi web";
   });
 }
