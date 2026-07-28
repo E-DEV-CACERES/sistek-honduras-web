@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sistekhn.com/sitemap.xml
+Sitemap: https://sistechonduras.online/sitemap.xml
