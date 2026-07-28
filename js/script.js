@@ -183,7 +183,7 @@ if (quoteForm) {
 // ===== Analizador web (Google PageSpeed Insights API) =====
 // Obtén tu API key gratis en Google Cloud Console > APIs > PageSpeed Insights API
 // https://developers.google.com/speed/docs/insights/v5/get-started
-const GOOGLE_PSI_API_KEY = ""; // pega aquí tu API key
+const GOOGLE_PSI_API_KEY = "AIzaSyAYR8Lebimv7aigoSl5gsRK4dY6ilnSlR4";
 
 const analyzerForm = document.getElementById("analyzerForm");
 if (analyzerForm) {
