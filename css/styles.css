@@ -144,11 +144,14 @@ body {
   gap: 0.35rem;
   padding: 0.5rem 0.75rem;
 }
-.tech-carousel-item img {
+.tech-carousel-item img,
+.tech-carousel-item .tech-logo {
   display: block;
   width: 2.25rem;
   height: 2.25rem;
   object-fit: contain;
+  /* simple-icons SVGs son negros; los teñimos al color de marca */
+  filter: invert(28%) sepia(98%) saturate(1800%) hue-rotate(210deg) brightness(90%) contrast(95%);
 }
 .tech-carousel-item span {
   display: block;
