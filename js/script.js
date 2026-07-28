@@ -286,9 +286,12 @@ if (analyzerForm) {
 
       const data = await res.json();
       if (!res.ok) {
-        const msg =
-          data?.error?.message ||
-          "Google no pudo analizar el sitio. Revisa la URL o configura tu API key.";
+        const apiMsg = data?.error?.message || "";
+        let msg = apiMsg || "Google no pudo analizar el sitio. Revisa la URL o configura tu API key.";
+        if (/referer null/i.test(apiMsg) || /referer.*blocked/i.test(apiMsg)) {
+          msg =
+            "La API key está bloqueada por restricción de sitios. Abre la web con http://localhost (no con archivo local) o en sistechonduras.online. También puedes poner temporalmente la restricción en \"Ninguno\".";
+        }
         throw new Error(msg);
       }
 
