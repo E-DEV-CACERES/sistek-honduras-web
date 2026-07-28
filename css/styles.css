@@ -131,26 +131,27 @@ body {
 }
 .tech-carousel-item {
   box-sizing: border-box;
-  flex: 0 0 25%;
-  width: min(18rem, 25vw);
+  flex: 0 0 auto;
+  width: 7.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1.25rem 1rem;
+  gap: 0.45rem;
+  padding: 0.75rem 0.5rem;
 }
 .tech-carousel-item img {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: contain;
   filter: drop-shadow(0 6px 12px rgba(15, 23, 42, 0.08));
 }
 .tech-carousel-item span {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #1a358d;
+  white-space: nowrap;
 }
 @keyframes tech-marquee {
   from { transform: translateX(0); }
@@ -158,12 +159,11 @@ body {
 }
 @media (max-width: 768px) {
   .tech-carousel-item {
-    flex-basis: 40vw;
-    min-width: 120px;
+    width: 6.5rem;
   }
   .tech-carousel-item img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.15rem;
+    height: 2.15rem;
   }
 }
 
