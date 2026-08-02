@@ -12,3 +12,9 @@
   for = "/*.html"
   [headers.values]
     Content-Type = "text/html; charset=UTF-8"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=UTF-8"
+    X-Content-Type-Options = "nosniff"
