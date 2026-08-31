@@ -16,7 +16,7 @@ sistek-honduras-web/
 
 1. **Número de WhatsApp** ✅ ya configurado con `+504 8897-1964` en todos los botones (`js/script.js` e `index.html`). Si cambia, busca `50488971964` en ambos archivos y reemplázalo.
 
-2. **Correo de contacto** ✅ configurado como `contacto@sistechonduras.online`. Para que llegue de verdad hace falta un reenvío activo en Namecheap (Domain List → Manage → Redirigir correo electrónico) hacia un Gmail real. Sin esa regla, los mensajes se pierden en silencio.
+2. **Correo de contacto**: retirado de la sección `#contacto` a propósito. El único canal publicado es WhatsApp, para no mostrar una dirección sin buzón detrás. Si más adelante quieres mostrar un correo, primero activa el reenvío en Namecheap (Domain List → Manage → Redirigir correo electrónico) hacia un Gmail real y después agrégalo al sitio.
 
 3. **Precios**: la sección `#precios` usa valores de referencia (L. 6,000 / L. 15,000). Ajústalos a tus costos reales.
 
