@@ -424,6 +424,22 @@ body {
 }
 .social-icon:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.social-icon:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.social-icon svg {
+  display: block;
+}
+/* El canal de contacto principal se destaca con el verde de WhatsApp */
+.social-icon--wa {
+  background: #25d366;
+  color: #fff;
+}
+.social-icon--wa:hover {
+  background: #1ebe5b;
 }
 
 /* ===== WhatsApp floating button ===== */
