@@ -16,15 +16,15 @@ sistek-honduras-web/
 
 1. **Número de WhatsApp** ✅ ya configurado con `+504 8897-1964` en todos los botones (`js/script.js` e `index.html`). Si cambia, busca `50488971964` en ambos archivos y reemplázalo.
 
-2. **Correo de contacto**: busca `contacto@sistekhn.com` en `index.html` y cámbialo por tu correo real.
+2. **Correo de contacto** ✅ configurado como `contacto@sistechonduras.online`. Para que llegue de verdad hace falta un reenvío activo en Namecheap (Domain List → Manage → Redirigir correo electrónico) hacia un Gmail real. Sin esa regla, los mensajes se pierden en silencio.
 
-3. **Precios**: la sección `#precios` tiene valores de ejemplo (L. 6,000 / L. 15,000). Ajústalos a tus costos reales.
+3. **Precios**: la sección `#precios` usa valores de referencia (L. 6,000 / L. 15,000). Ajústalos a tus costos reales.
 
-4. **Portafolio y testimonios**: las secciones `#portafolio` y de testimonios tienen contenido de ejemplo, claramente marcado. Reemplázalo con tus proyectos y clientes reales a medida que los consigas.
+4. **Portafolio** (`#portafolio`): la sección está redactada como tipos de solución que ofreces, no como proyectos entregados, porque las imágenes son ilustrativas. Cuando tengas capturas de proyectos reales, cámbialas y ahí sí puedes titular la sección "Proyectos que hemos desarrollado".
 
-4.1. **Equipo** (`#equipo`): reemplaza "Tu Nombre" con tu nombre real, tu foto (agrega una `<img>` dentro de `.team-avatar` en vez de las iniciales "TU") y tu bio. Hay 2 tarjetas de "Vacante abierta" ya preparadas — cuando sumes gente a tu equipo, solo copia la tarjeta `.team-card` del fundador y reemplaza esos placeholders. Si por ahora trabajas solo, puedes borrar las tarjetas "ghost" o dejarlas como llamado a colaboradores/freelancers.
+5. **Compromisos** (`#compromisos`): sustituyó a la antigua sección de testimonios, que traía nueve clientes de ejemplo. No vuelvas a poner testimonios inventados: si consigues uno o dos reales con permiso del cliente, valen más que nueve genéricos.
 
-5. **Redes sociales**: en la sección de contacto, los íconos `f`, `ig`, `tt` tienen `href="#"` — cámbialos por los links reales de Facebook/Instagram/TikTok.
+6. **Redes sociales**: en la sección de contacto, los íconos `f`, `ig`, `tt` tienen `href="#"` — cámbialos por los links reales de Facebook/Instagram/TikTok.
 
 ## Cómo verlo en tu computadora
 
@@ -59,11 +59,9 @@ Una vez publicado en Netlify/Vercel, compra un dominio (ej. `sistekhn.com` o `si
 
 El sitio ya incluye: título y meta descripción optimizados, Open Graph y Twitter Cards para que se vea bien al compartir en redes, datos estructurados (Schema.org `ProfessionalService`) para que Google pueda mostrar tu negocio con más detalle, `robots.txt`, `sitemap.xml`, imágenes optimizadas en WebP/JPEG con dimensiones definidas (evita saltos de layout), y una sola etiqueta `<h1>` con jerarquía correcta de encabezados.
 
-**IMPORTANTE — antes de publicar, reemplaza `https://www.sistekhn.com/` por tu dominio real** en estos lugares:
-- `<link rel="canonical">` en el `<head>`
-- Todas las etiquetas `og:url`, `og:image`, `twitter:image`
-- El bloque de datos estructurados (`application/ld+json`)
-- `robots.txt` y `sitemap.xml`
+El dominio real `https://sistechonduras.online/` ✅ ya está aplicado en el `canonical`, las etiquetas `og:*` y `twitter:*`, los datos estructurados, `robots.txt` y `sitemap.xml`.
+
+La imagen que se ve al compartir el enlace en WhatsApp, Facebook o Instagram es `img/og-sistek.jpg` (1200x630). Si cambias el eslogan o el número de WhatsApp, hay que regenerarla para que no quede desactualizada.
 
 Una vez publicado con tu dominio real:
 1. Regístralo en **Google Search Console** (gratis) y envía el `sitemap.xml` para que Google lo indexe más rápido.
