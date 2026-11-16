@@ -34,7 +34,7 @@
 </head>
 <body class="font-body text-slate-800 bg-white antialiased">
 
-<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+<header id="navbar" class="navbar-solid fixed top-0 inset-x-0 z-50 transition-all duration-300">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
     <a href="../index.html" class="flex items-center gap-2 shrink-0" aria-label="Sistek Honduras">
       <img src="../img/logo-sistek.png" alt="Sistek Honduras - Soluciones informáticas y software" class="site-logo" width="180" height="180" />
@@ -66,10 +66,12 @@
 
 <section class="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700 text-white">
   <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_80%_20%,white,transparent_40%)]"></div>
-  <div class="relative max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 items-center">
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:items-center">
     <div>
-      <a href="../index.html#servicios" class="inline-flex items-center gap-2 text-brand-200 hover:text-white text-sm font-semibold mb-6">&larr; Volver a servicios</a>
-      <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-brand-100 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Especialidad &middot; Financieras</span>
+      <div class="flex flex-col items-start gap-3 mb-6">
+        <a href="../index.html#servicios" class="inline-flex items-center gap-2 text-brand-200 hover:text-white text-sm font-semibold">&larr; Volver a servicios</a>
+        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-brand-100 text-xs font-semibold px-4 py-1.5 rounded-full">Especialidad &middot; Financieras</span>
+      </div>
       <h1 class="font-heading text-4xl md:text-5xl font-extrabold leading-tight">Sistema para financieras en Honduras con app móvil e impresión en campo</h1>
       <p class="mt-5 text-lg text-brand-100/85 max-w-xl">Software de créditos y cobros para financieras hondureñas. Tus cobradores cobran, imprimen el recibo al instante y todo se sincroniza en tiempo real desde la oficina y en la calle.</p>
       <div class="mt-8 flex flex-wrap gap-8 text-sm">
@@ -86,26 +88,26 @@
         </a>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="feature-glow p-5 rounded-2xl bg-white/10 border border-white/10">
-        <p class="text-xs font-bold tracking-widest text-brand-200 mb-2">APP</p>
-        <h3 class="font-heading font-bold">App de cobro</h3>
-        <p class="text-sm text-brand-100/75 mt-1">Rutas, clientes y pagos en el celular del cobrador.</p>
+    <div class="grid grid-cols-2 gap-3 max-w-md w-full lg:justify-self-end">
+      <div class="feature-glow p-3.5 rounded-xl bg-white/10 border border-white/10">
+        <p class="text-[11px] font-bold tracking-widest text-brand-200 mb-1">APP</p>
+        <h3 class="font-heading font-bold text-sm">App de cobro</h3>
+        <p class="text-xs text-brand-100/75 mt-1 leading-snug">Rutas, clientes y pagos en el celular del cobrador.</p>
       </div>
-      <div class="feature-glow p-5 rounded-2xl bg-white/10 border border-white/10 mt-6">
-        <p class="text-xs font-bold tracking-widest text-brand-200 mb-2">PRINT</p>
-        <h3 class="font-heading font-bold">Impresión en campo</h3>
-        <p class="text-sm text-brand-100/75 mt-1">Recibo térmico Bluetooth al momento del cobro.</p>
+      <div class="feature-glow p-3.5 rounded-xl bg-white/10 border border-white/10">
+        <p class="text-[11px] font-bold tracking-widest text-brand-200 mb-1">PRINT</p>
+        <h3 class="font-heading font-bold text-sm">Impresión en campo</h3>
+        <p class="text-xs text-brand-100/75 mt-1 leading-snug">Recibo térmico Bluetooth al momento del cobro.</p>
       </div>
-      <div class="feature-glow p-5 rounded-2xl bg-white/10 border border-white/10">
-        <p class="text-xs font-bold tracking-widest text-brand-200 mb-2">WEB</p>
-        <h3 class="font-heading font-bold">Panel web</h3>
-        <p class="text-sm text-brand-100/75 mt-1">Créditos, reportes, morosidad y control diario.</p>
+      <div class="feature-glow p-3.5 rounded-xl bg-white/10 border border-white/10">
+        <p class="text-[11px] font-bold tracking-widest text-brand-200 mb-1">WEB</p>
+        <h3 class="font-heading font-bold text-sm">Panel web</h3>
+        <p class="text-xs text-brand-100/75 mt-1 leading-snug">Créditos, reportes, morosidad y control diario.</p>
       </div>
-      <div class="feature-glow p-5 rounded-2xl bg-white/10 border border-white/10 mt-6">
-        <p class="text-xs font-bold tracking-widest text-brand-200 mb-2">SYNC</p>
-        <h3 class="font-heading font-bold">Offline / sync</h3>
-        <p class="text-sm text-brand-100/75 mt-1">Cobra sin señal y sincroniza al recuperar conexión.</p>
+      <div class="feature-glow p-3.5 rounded-xl bg-white/10 border border-white/10">
+        <p class="text-[11px] font-bold tracking-widest text-brand-200 mb-1">SYNC</p>
+        <h3 class="font-heading font-bold text-sm">Offline / sync</h3>
+        <p class="text-xs text-brand-100/75 mt-1 leading-snug">Cobra sin señal y sincroniza al recuperar conexión.</p>
       </div>
     </div>
   </div>
